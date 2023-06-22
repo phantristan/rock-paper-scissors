@@ -4,8 +4,8 @@
 */
 
 function getComputerChoice() {
-    var choices = ['Rock', 'Paper', 'Scissors'];
-    var randomIndex = Math.floor(Math.random() * choices.length);
+    let choices = ['Rock', 'Paper', 'Scissors'];
+    let randomIndex = Math.floor(Math.random() * choices.length);
 
     return choices[randomIndex];
 }
@@ -23,8 +23,8 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection){
     console.log("Your choice is: " + playerSelection);
     console.log("The computer's choice is: "+ computerSelection);
-    var playerChoice = playerSelection.toLowerCase();
-    var computerChoice = computerSelection.toLowerCase();
+    let playerChoice = playerSelection.toLowerCase();
+    let computerChoice = computerSelection.toLowerCase();
     
     switch (playerChoice) {
         case "scissors":
@@ -55,10 +55,16 @@ function playRound(playerSelection, computerSelection){
             }
             break;
     }
-}   
+}
 
-var playerChoice = prompt("Enter your choice");
-var computerChoice = getComputerChoice();
+function game() {
+    for (let i = 0; i < 5; i++) {
+
+    }
+}
+
+let playerChoice = prompt("Enter your choice");
+let computerChoice = getComputerChoice();
 
 console.log(playRound(playerChoice, computerChoice));
 
