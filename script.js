@@ -20,7 +20,7 @@ function getComputerChoice() {
     - "You win! Rock beats Scissors"
    Make selections case-insensitive */
 
-function rockPaperScissors(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
     console.log("Your choice is: " + playerSelection);
     console.log("The computer's choice is: "+ computerSelection);
     var playerChoice = playerSelection.toLowerCase();
@@ -29,29 +29,29 @@ function rockPaperScissors(playerSelection, computerSelection){
     switch (playerChoice) {
         case "scissors":
             if (computerChoice === "scissors") {
-                console.log("It's a tie!")
+                return("It's a tie!")
             } else if (computerChoice === "rock") {
-                console.log("You lose! Rock beats Scissors.")
+                return("You lose! Rock beats Scissors.")
             } else if (computerChoice === "paper") {
-                console.log("You win! Scissors beats Paper.")
+                return("You win! Scissors beats Paper.")
             }
             break;
         case "rock":
             if (computerChoice === "rock") {
-                console.log("It's a tie!")
+                return("It's a tie!")
             } else if (computerChoice === "paper") {
-                console.log("You lose! Paper beats Rock.")
+                return("You lose! Paper beats Rock.")
             } else if (computerChoice === "scissors") {
-                console.log("You win! Rock beats Scissors.")
+                return("You win! Rock beats Scissors.")
             }
             break;
         case "paper":
             if (computerChoice === "paper") {
-                console.log("It's a tie!")
+                return("It's a tie!")
             } else if (computerChoice === "scissors") {
-                console.log("You lose! Scissors beats Paper.")
+                return("You lose! Scissors beats Paper.")
             } else if (computerChoice === "rock") {
-                console.log("You win! Paper beats Rock.")
+                return("You win! Paper beats Rock.")
             }
             break;
     }
@@ -60,7 +60,7 @@ function rockPaperScissors(playerSelection, computerSelection){
 var playerChoice = prompt("Enter your choice");
 var computerChoice = getComputerChoice();
 
-rockPaperScissors(playerChoice, computerChoice);
+console.log(playRound(playerChoice, computerChoice));
 
 /* change console.log statements to return statements
     later, this is a breakpoint */
