@@ -58,15 +58,38 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+
     for (let i = 0; i < 5; i++) {
         let playerChoice = prompt("Enter your choice");
         let computerChoice = getComputerChoice();
 
-        console.log(playRound(playerChoice, computerChoice));
+        let roundResult = (playRound(playerChoice, computerChoice));
+        console.log(roundResult)
+
+        if (roundResult.startsWith("You win")) {
+            playerWins ++;
+        }
+        else if (roundResult.startsWith("You lose")) {
+            computerWins ++;
+        }
+    }
+
+    if (playerWins > computerWins) {
+        console.log("You beat the computer: " + playerWins + " to " + computerWins);
+    }
+    else if (playerWins < computerWins) {
+        console.log("You lost to the computer: " + playerWins + " to " + computerWins);
+    }
+    else {
+        console.log("Its a tie:" + playerWins + " to " + computerWins);
     }
 }
 
 game();
 
-/* change console.log statements to return statements
-    later, this is a breakpoint */
+/* store playround into result
+if result startswith "You win" win ++
+if result starts with You lose, computer win ++
+if win > computer win p */
